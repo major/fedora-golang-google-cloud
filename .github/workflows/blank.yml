@@ -27,7 +27,7 @@ jobs:
       - name: Generate spec files
         run: |
           pushd google-cloud-go
-            ./specmaker.sh
+            ../specmaker.sh
           popd
 
       - name: Commit and push if it changed
