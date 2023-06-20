@@ -21,7 +21,7 @@ jobs:
       - name: Clone the google-cloud-go repository
         uses: actions/checkout@v3
         with:
-          repository: https://github.com/googleapis/google-cloud-go
+          repository: googleapis/google-cloud-go
           path: google-cloud-go
 
       - name: Generate spec files
