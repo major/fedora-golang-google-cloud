@@ -1,0 +1,21 @@
+name: Generate spec files
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone this repository
+        uses: actions/checkout@v3
+        
+      - name: Clone the google-cloud-go repository
+        uses: actions/checkout@v3
+        with:
+          repository: https://github.com/googleapis/google-cloud-go
+          path: google-cloud-go
