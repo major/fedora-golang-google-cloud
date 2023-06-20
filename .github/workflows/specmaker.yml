@@ -17,7 +17,13 @@ jobs:
     steps:
       - name: Clone this repository
         uses: actions/checkout@v3
-        
+
+      - name: Cache google-cloud-go repository
+        uses: actions/cache@v3
+        with:
+          path: google-cloud-go
+          key: ${{ runner.os }}-google-cloud-go
+
       - name: Clone the google-cloud-go repository
         uses: actions/checkout@v3
         with:
@@ -28,6 +34,7 @@ jobs:
       - name: Generate spec files
         run: |
           pushd google-cloud-go
+            git pull --rebase
             ../specmaker.sh
           popd
 
