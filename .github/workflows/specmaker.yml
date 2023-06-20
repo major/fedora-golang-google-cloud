@@ -23,6 +23,7 @@ jobs:
         with:
           repository: googleapis/google-cloud-go
           path: google-cloud-go
+          fetch-depth: 0
 
       - name: Generate spec files
         run: |
