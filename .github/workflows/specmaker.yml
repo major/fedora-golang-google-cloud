@@ -33,6 +33,7 @@ jobs:
 
       - name: Generate spec files
         run: |
+          rm -rf specs
           pushd google-cloud-go
             git pull --rebase
             ../specmaker.sh
