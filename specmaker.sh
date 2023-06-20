@@ -2,6 +2,7 @@
 # Generate spec files for submodules in Google's Cloud Go package.
 set -x
 
+mkdir -vp ../specs
 for SUBMODULE in $(ls -d */ | sed 's/\/$//'); do 
     GIT_TAG=$(git tag | sort --version-sort -r | grep $SUBMODULE | head -n 1)
     if [ -z $GIT_TAG ]; then
@@ -14,6 +15,5 @@ for SUBMODULE in $(ls -d */ | sed 's/\/$//'); do
 
     export VERSION SUBMODULE
 
-    mkdir -vp ../specs
     envsubst < ../template.spec > ../specs/golang-google-cloud-$SUBMODULE.spec
 done
