@@ -14,6 +14,6 @@ for SUBMODULE in $(ls -d */ | sed 's/\/$//'); do
 
     export VERSION SUBMODULE
 
-    mkdir -vp specs
+    mkdir -vp ../specs
     envsubst < ../template.spec > ../specs/golang-google-cloud-$SUBMODULE.spec
 done
