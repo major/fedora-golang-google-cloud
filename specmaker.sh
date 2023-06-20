@@ -1,5 +1,6 @@
 #!/bin/bash
 # Generate spec files for submodules in Google's Cloud Go package.
+set -x
 
 for SUBMODULE in $(ls -d */ | sed 's/\/$//'); do 
     GIT_TAG=$(git tag | sort --version-sort -r | grep $SUBMODULE | head -n 1)
