@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone this repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Cache google-cloud-go repository
         uses: actions/cache@v3
@@ -25,7 +25,7 @@ jobs:
           key: ${{ runner.os }}-google-cloud-go
 
       - name: Clone the google-cloud-go repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: googleapis/google-cloud-go
           path: google-cloud-go
