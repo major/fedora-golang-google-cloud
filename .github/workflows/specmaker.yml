@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Cache google-cloud-go repository
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: google-cloud-go
           key: ${{ runner.os }}-google-cloud-go
